@@ -37,6 +37,14 @@ namespace HowToImplementTests.Api
 
             app.MapControllers();
 
+
+            //Make sure it will run automatically any migration that didnt run
+            using (var scope = app.Services.CreateScope())
+            {
+                var myDbContext = scope.ServiceProvider.GetRequiredService<MyDbContext>();
+                myDbContext.Database.Migrate();
+            }
+
             app.Run();
         }
     }
