@@ -13,7 +13,7 @@ namespace HowToImplementTests.Api.DAL
             _context = context;
         }
 
-        public async Task<List<Client>> GetAllClientsAsync()
+        public async Task<IEnumerable<Client>> GetAllClientsAsync()
         {
             return await _context.Client.ToListAsync();
         }

@@ -1,5 +1,6 @@
 using HowToImplementTests.Api.DAL;
 using HowToImplementTests.Api.Data;
+using HowToImplementTests.Api.Services;
 using Microsoft.EntityFrameworkCore;
 
 namespace HowToImplementTests.Api
@@ -21,6 +22,7 @@ namespace HowToImplementTests.Api
 
             builder.Services.AddScoped<ICalculatorModel, CalculatorModel>();
             builder.Services.AddScoped<IClientRepository, ClientRepository>();
+            builder.Services.AddScoped<IClientService, ClientService>();
 
             var app = builder.Build();
 
