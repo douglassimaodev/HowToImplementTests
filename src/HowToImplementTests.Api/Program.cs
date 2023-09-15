@@ -1,4 +1,6 @@
 
+using HowToImplementTests.Api.Models;
+
 namespace HowToImplementTests.Api
 {
     public class Program
@@ -13,6 +15,8 @@ namespace HowToImplementTests.Api
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+
+            builder.Services.AddScoped<ICalculatorModel, CalculatorModel>();
 
             var app = builder.Build();
 
