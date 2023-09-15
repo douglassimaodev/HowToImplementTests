@@ -1,9 +1,6 @@
-
 using HowToImplementTests.Api.DAL;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
 using HowToImplementTests.Api.Data;
-using HowToImplementTests.Api.Controllers;
+using Microsoft.EntityFrameworkCore;
 
 namespace HowToImplementTests.Api
 {
@@ -38,10 +35,7 @@ namespace HowToImplementTests.Api
 
             app.UseAuthorization();
 
-
             app.MapControllers();
-
-                        app.MapClientEndpoints();
 
             app.Run();
         }
