@@ -1,4 +1,4 @@
-﻿namespace HowToImplementTests.Api.Models
+﻿namespace HowToImplementTests.Api.DAL
 {
     public interface ICalculatorModel
     {

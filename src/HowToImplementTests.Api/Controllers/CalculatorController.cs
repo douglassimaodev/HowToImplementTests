@@ -1,4 +1,4 @@
-using HowToImplementTests.Api.Models;
+using HowToImplementTests.Api.DAL;
 using Microsoft.AspNetCore.Mvc;
 
 namespace HowToImplementTests.Api.Controllers

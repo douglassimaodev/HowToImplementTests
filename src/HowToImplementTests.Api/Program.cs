@@ -1,5 +1,9 @@
 
-using HowToImplementTests.Api.Models;
+using HowToImplementTests.Api.DAL;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using HowToImplementTests.Api.Data;
+using HowToImplementTests.Api.Controllers;
 
 namespace HowToImplementTests.Api
 {
@@ -8,6 +12,8 @@ namespace HowToImplementTests.Api
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+            builder.Services.AddDbContext<MyDbContext>(options =>
+                options.UseSqlServer(builder.Configuration.GetConnectionString("MyDbContext") ?? throw new InvalidOperationException("Connection string 'MyDbContext' not found.")));
 
             // Add services to the container.
 
@@ -17,6 +23,7 @@ namespace HowToImplementTests.Api
             builder.Services.AddSwaggerGen();
 
             builder.Services.AddScoped<ICalculatorModel, CalculatorModel>();
+            builder.Services.AddScoped<IClientRepository, ClientRepository>();
 
             var app = builder.Build();
 
@@ -33,6 +40,8 @@ namespace HowToImplementTests.Api
 
 
             app.MapControllers();
+
+                        app.MapClientEndpoints();
 
             app.Run();
         }

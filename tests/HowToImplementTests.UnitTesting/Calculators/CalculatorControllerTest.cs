@@ -1,6 +1,6 @@
 ﻿using FluentAssertions;
 using HowToImplementTests.Api.Controllers;
-using HowToImplementTests.Api.Models;
+using HowToImplementTests.Api.DAL;
 using Microsoft.AspNetCore.Mvc;
 using NSubstitute;
 
