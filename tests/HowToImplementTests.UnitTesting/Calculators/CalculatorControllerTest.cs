@@ -18,11 +18,12 @@ namespace HowToImplementTests.UnitTesting.Calculators
             var controller = new CalculatorController(calculator);
 
             // Act
-            var sut = controller.Add(5.0, 3.0);
+            var sut = controller.Add(5, 3);
 
             // Assert
-            sut.Result.Should().BeOfType<OkObjectResult>();
-            sut.Value.Should().Be(8);
+            sut.Result.Should().BeOfType<OkObjectResult>()
+            .Which.Value.Should().BeOfType<double>()
+            .Which.Should().Be(8);
         }
 
         [Fact]
@@ -35,11 +36,12 @@ namespace HowToImplementTests.UnitTesting.Calculators
             var controller = new CalculatorController(calculator);
 
             // Act
-            var sut = controller.Add(5, 3);
+            var sut = controller.Subtract(5, 3);
 
             // Assert
-            sut.Result.Should().BeOfType<OkObjectResult>();
-            sut.Value.Should().Be(2);
+            sut.Result.Should().BeOfType<OkObjectResult>()
+            .Which.Value.Should().BeOfType<double>()
+            .Which.Should().Be(2);
         }
 
         [Fact]
@@ -52,11 +54,12 @@ namespace HowToImplementTests.UnitTesting.Calculators
             var controller = new CalculatorController(calculator);
 
             // Act
-            var sut = controller.Add(5, 3);
+            var sut = controller.Multiply(5, 3);
 
             // Assert
-            sut.Result.Should().BeOfType<OkObjectResult>();
-            sut.Value.Should().Be(15);
+            sut.Result.Should().BeOfType<OkObjectResult>()
+             .Which.Value.Should().BeOfType<double>()
+             .Which.Should().Be(15);
         }
 
         [Fact]
@@ -69,11 +72,12 @@ namespace HowToImplementTests.UnitTesting.Calculators
             var controller = new CalculatorController(calculator);
 
             // Act
-            var sut = controller.Add(10, 2);
+            var sut = controller.Divide(10, 2);
 
             // Assert
-            sut.Result.Should().BeOfType<OkObjectResult>();
-            sut.Value.Should().Be(5);
+            sut.Result.Should().BeOfType<OkObjectResult>()
+           .Which.Value.Should().BeOfType<double>()
+           .Which.Should().Be(5);
         }
 
         [Fact]
