@@ -65,7 +65,8 @@ namespace HowToImplementTests.UnitTesting.Calculators
 
             // Act & Assert
             calculator.Invoking(c => c.Divide(5, 0))
-                .Should().Throw<DivideByZeroException>();
+                .Should().Throw<DivideByZeroException>()
+                .WithMessage("*Cannot divide by zero*");
         }
     }
 }
