@@ -2,8 +2,10 @@
 using HowToImplementTests.Api.DAL;
 using HowToImplementTests.Api.Models;
 using HowToImplementTests.Api.Services;
+using Microsoft.Data.SqlClient;
 using Microsoft.Extensions.Logging;
 using NSubstitute;
+using NSubstitute.ExceptionExtensions;
 
 namespace HowToImplementTests.UnitTesting.Clients
 {
@@ -63,6 +65,21 @@ namespace HowToImplementTests.UnitTesting.Clients
 
             //Assert
             _logger.Received(1).LogInformation("the user xxx is retrieving all clients");
+        }
+
+        [Fact]
+        public async Task GetAllClientsAsync_ShouldLogMessagesAndException_WhenExceptionIsThown()
+        {
+            // Arrange
+            var sqlExeption = new Exception("Simulated SQL error");
+            _clientRepository.GetAllClientsAsync().Throws(sqlExeption);  // Here, we're using a standard exception as a stand-in.
+
+            // Act
+            var request = _sut.GetAllClientsAsync;
+
+            //Assert
+            await request.Should().ThrowAsync<Exception>().WithMessage("Simulated SQL error");
+            _logger.Received(1).LogError(sqlExeption, "something went wrong while user xx was retrieving all clients");
         }
     }
 }
