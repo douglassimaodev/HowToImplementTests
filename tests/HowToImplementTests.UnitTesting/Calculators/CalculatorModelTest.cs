@@ -25,17 +25,18 @@ namespace HowToImplementTests.UnitTesting.Calculators
             result.Should().Be(expected);
         }
 
-        [Fact]
-        public void Subtract_ShouldReturnCorrectResult()
+        [Theory]
+        [MemberData(nameof(AddTestDate))]
+        public void Subtract_ShouldReturnCorrectResult(double a, double b, double expected)
         {
             // Arrange
             var calculator = new CalculatorModel();
 
             // Act
-            double result = calculator.Subtract(5, 3);
+            double result = calculator.Subtract(a, b);
 
             // Assert
-            result.Should().Be(2);
+            result.Should().Be(expected);
         }
 
         [Fact]
@@ -81,5 +82,13 @@ namespace HowToImplementTests.UnitTesting.Calculators
 
             //Check HowToImplementTests.Api.csproj file
         }
+
+        public static IEnumerable<object[]> AddTestDate =>
+            new List<object[]>
+            {
+                new object[] {15, 5, 10},
+                new object[] {10, 5, 5},
+                new object[] {50, -5, 55}
+            };
     }
 }

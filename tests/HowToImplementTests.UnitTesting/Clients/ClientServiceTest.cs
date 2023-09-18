@@ -2,23 +2,25 @@
 using HowToImplementTests.Api.DAL;
 using HowToImplementTests.Api.Models;
 using HowToImplementTests.Api.Services;
-using Microsoft.Data.SqlClient;
 using Microsoft.Extensions.Logging;
 using NSubstitute;
 using NSubstitute.ExceptionExtensions;
 
 namespace HowToImplementTests.UnitTesting.Clients
 {
-    public class ClientServiceTest
+    [Collection("Client collection")]
+    public class ClientServiceTest //: IClassFixture<ClientFixture>
     {
         private readonly ClientService _sut;
 
         private readonly IClientRepository _clientRepository = Substitute.For<IClientRepository>();
         private readonly ILogger<ClientService> _logger = Substitute.For<ILogger<ClientService>>();
-
-        public ClientServiceTest()
+        private readonly ClientFixture _clientFixture;
+        
+        public ClientServiceTest(ClientFixture clientFixture)
         {           
             _sut = new ClientService(_clientRepository, _logger);
+            _clientFixture = clientFixture;
         }
 
         [Fact]
