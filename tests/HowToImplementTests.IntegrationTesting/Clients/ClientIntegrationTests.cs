@@ -47,7 +47,7 @@ namespace HowToImplementTests.IntegrationTesting
 
             // If you also want to check the returned Location header:
             var location = sut.Headers.Location.ToString();
-            location.Should().Contain("/api/client/1");  // Assuming that the created client has ID of 1
+            location.ToLower().Should().Contain("/api/client/1");  // Assuming that the created client has ID of 1
         }
     }
 }
