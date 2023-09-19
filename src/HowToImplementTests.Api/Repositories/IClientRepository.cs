@@ -1,6 +1,6 @@
 ﻿using HowToImplementTests.Api.Models;
 
-namespace HowToImplementTests.Api.DAL
+namespace HowToImplementTests.Api.Repositories
 {
     public interface IClientRepository
     {

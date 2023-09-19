@@ -2,7 +2,7 @@
 using HowToImplementTests.Api.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace HowToImplementTests.Api.DAL
+namespace HowToImplementTests.Api.Repositories
 {
     public class ClientRepository : IClientRepository
     {

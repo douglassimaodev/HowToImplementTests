@@ -21,4 +21,8 @@
 		<InternalsVisibleTo Include="HowToImplementTests.UnitTesting" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <Folder Include="Helpers\" />
+	</ItemGroup>
+
 </Project>

@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34031.279
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HowToImplementTests.Api", "src\HowToImplementTests.Api\HowToImplementTests.Api.csproj", "{F678E6C7-7B2E-4E89-82CA-D653E0AC2F9C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HowToImplementTests.Api", "src\HowToImplementTests.Api\HowToImplementTests.Api.csproj", "{F678E6C7-7B2E-4E89-82CA-D653E0AC2F9C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{B7B48330-752B-43DD-9F91-E4C99295BA1E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HowToImplementTests.UnitTesting", "tests\HowToImplementTests.UnitTesting\HowToImplementTests.UnitTesting.csproj", "{11B1F357-676E-4176-8A61-89FC13D48D98}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HowToImplementTests.UnitTesting", "tests\HowToImplementTests.UnitTesting\HowToImplementTests.UnitTesting.csproj", "{11B1F357-676E-4176-8A61-89FC13D48D98}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HowToImplementTests.IntegrationTesting", "tests\HowToImplementTests.IntegrationTesting\HowToImplementTests.IntegrationTesting.csproj", "{5C212969-4BE3-4177-BEF7-4B264D9DD5FD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HowToImplementTests.IntegrationTesting", "tests\HowToImplementTests.IntegrationTesting\HowToImplementTests.IntegrationTesting.csproj", "{5C212969-4BE3-4177-BEF7-4B264D9DD5FD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

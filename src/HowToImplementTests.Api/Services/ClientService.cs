@@ -1,5 +1,5 @@
-﻿using HowToImplementTests.Api.DAL;
-using HowToImplementTests.Api.Models;
+﻿using HowToImplementTests.Api.Models;
+using HowToImplementTests.Api.Repositories;
 using System.Diagnostics;
 
 namespace HowToImplementTests.Api.Services

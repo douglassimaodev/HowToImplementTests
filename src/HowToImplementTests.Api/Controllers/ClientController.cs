@@ -1,5 +1,5 @@
-﻿using HowToImplementTests.Api.DAL;
-using HowToImplementTests.Api.Models;
+﻿using HowToImplementTests.Api.Models;
+using HowToImplementTests.Api.Repositories;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -15,15 +15,13 @@ namespace HowToImplementTests.Api.Controllers
         {
             _repository = repository;
         }
-
-        // GET: api/Clients
+        
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Client>>> GetClient()
         {
             return Ok(await _repository.GetAllClientsAsync());
         }
 
-        // GET: api/Clients/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Client>> GetClient(int id)
         {
@@ -37,7 +35,7 @@ namespace HowToImplementTests.Api.Controllers
             return client;
         }
 
-       [HttpPut("{id}")]
+        [HttpPut("{id}")]
         public async Task<IActionResult> PutClient(int id, Client client)
         {
             if (id != client.Id)

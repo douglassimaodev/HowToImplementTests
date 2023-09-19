@@ -1,6 +1,6 @@
 ﻿using FluentAssertions;
-using HowToImplementTests.Api.DAL;
 using HowToImplementTests.Api.Models;
+using HowToImplementTests.Api.Repositories;
 using HowToImplementTests.Api.Services;
 using Microsoft.Extensions.Logging;
 using NSubstitute;

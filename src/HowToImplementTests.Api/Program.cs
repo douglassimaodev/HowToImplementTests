@@ -1,5 +1,6 @@
 using HowToImplementTests.Api.DAL;
 using HowToImplementTests.Api.Data;
+using HowToImplementTests.Api.Repositories;
 using HowToImplementTests.Api.Services;
 using Microsoft.EntityFrameworkCore;
 
